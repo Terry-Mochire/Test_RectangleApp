@@ -1,13 +1,20 @@
 
 {{#each myRectangles}}
-    <p>{{isValid}}</p>
-<!--    {{#if isValid }}-->
-<!--    <p><h3>This is my height {{height}}</h3></p>-->
-<!--    <p><h3>This is my width {{width}}</h3></p>-->
-<!--    <p>Valid dimensions</p>-->
-<!--    {{else}}-->
-<!--        <p>Not a valid dimension.</p>-->
-<!--    {{/if}}-->
+    {{#if isValid}}
+     <p>The Height is: {{height}}</p>
+     <p>The Width is: {{width}}</p>
+     <p>The Shape is: {{#if shape}}
+       Square
+
+     {{else}}
+       Rectangle
+
+     {{/if}}</p>
+     {{else}}
+     <p>Not valid dimensions</p>
+
+    {{/if}}
+
 {{/each}}
 
 

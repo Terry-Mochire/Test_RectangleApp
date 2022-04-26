@@ -3,22 +3,40 @@ package org.example;
 import java.util.ArrayList;
 
 public class Rectangle {
-    private int height;
-    private int width;
-    private static ArrayList<Rectangle> mInstances = new ArrayList<>();
-
-    private Boolean shape;
-
-    private Boolean isValid;
 
 
-    public Rectangle(int height, int width){
-        this.height = height;
-        this.width = width;
-        this.mInstances.add(this);
+    public int height;
+    public int width;
+    public static ArrayList<Rectangle> mInstances = new ArrayList<>();
+
+    public Boolean shape;
+
+    public Boolean isValid;
+
+    public Rectangle(int h, int w){
+        this.height = h;
+        this.width = w;
         this.shape = isRectSquare();
-        dimensions();
 
+        if(w <= 0 || h <= 0){
+            this.isValid = false;
+        }
+        else{
+            this.isValid = true;
+        }
+        System.out.println(String.valueOf(this.isValid));
+        this.mInstances.add(this);
+    }
+
+    public static ArrayList<Rectangle> getAll(){
+        return mInstances;
+    }
+
+    public boolean isRectSquare(){
+        if (height == width){
+            return true;
+        }
+        return false;
     }
 
     public int getHeight() {
@@ -29,7 +47,7 @@ public class Rectangle {
         return width;
     }
 
-    public static ArrayList<Rectangle> getAll(){
+    public static ArrayList<Rectangle> getmInstances() {
         return mInstances;
     }
 
@@ -37,21 +55,9 @@ public class Rectangle {
         return shape;
     }
 
-    public boolean isRectSquare(){
-        if ( height == width){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public Boolean getValid() {
+    public Boolean getIsValid() {
         return isValid;
     }
 
-    public void dimensions(){
-        if ( (height <= 0) ){
-            isValid = false;
-        } isValid = true;
-    }
+
 }

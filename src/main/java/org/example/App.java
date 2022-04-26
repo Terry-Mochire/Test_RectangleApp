@@ -16,7 +16,9 @@ public class App {
 
             Map<String, ArrayList<Rectangle>> model = new HashMap<>();
             ArrayList myRectangleArrayList = Rectangle.getAll();
+
             model.put("myRectangles", myRectangleArrayList );
+
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
     }
