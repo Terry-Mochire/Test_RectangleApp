@@ -17,14 +17,6 @@ public class Rectangle {
         this.height = h;
         this.width = w;
         this.shape = isRectSquare();
-
-        if(w <= 0 || h <= 0){
-            this.isValid = false;
-        }
-        else{
-            this.isValid = true;
-        }
-        System.out.println(String.valueOf(this.isValid));
         this.mInstances.add(this);
     }
 
@@ -47,7 +39,7 @@ public class Rectangle {
         return width;
     }
 
-    public static ArrayList<Rectangle> getmInstances() {
+    public static ArrayList<Rectangle> getInstances() {
         return mInstances;
     }
 
@@ -55,9 +47,23 @@ public class Rectangle {
         return shape;
     }
 
+    public boolean testValid(){
+
+        if(this.width <= 0 || this.height <= 0){
+            this.isValid = false;
+        }
+        else{
+            this.isValid = true;
+        }
+        return this.isValid;
+    }
+
     public Boolean getIsValid() {
         return isValid;
     }
 
 
+    public int area() {
+        return height * width;
+    }
 }

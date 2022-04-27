@@ -1,20 +1,22 @@
 
-{{#each myRectangles}}
-    {{#if isValid}}
-     <p>The Height is: {{height}}</p>
-     <p>The Width is: {{width}}</p>
-     <p>The Shape is: {{#if shape}}
-       Square
-
-     {{else}}
-       Rectangle
-
-     {{/if}}</p>
-     {{else}}
-     <p>Not valid dimensions</p>
-
-    {{/if}}
-
+{{#each}}
+    <p><h3>Your Rectangle height is {{height}}</h3></p>
+    <p><h3>Your Rectangle width is {{width}}</h3></p>
+    {{#if shape}}
+        <p><h3>It's actually a square!</h3></p>
+        {{else}}
+        <p><h3>A true rectangle!</h3></p>
+        {{/if}}
 {{/each}}
+<form action="/rectangles" method="post">
+    <p>Calc my Rec</p>
+    <label for="height">Height</label>
+    <input type="number" name="height" id="height" >
+
+    <label for="width">Width</label>
+    <input type="number" name="width" id="width" >
+
+    <button type="submit" class="btn btn-default"> Go!</button>
+</form>
 
 

@@ -1,0 +1,10 @@
+{{#if username}}
+    <p>Welcome {{username}}</p>
+    {{else}}
+    <form action="/welcome" method="post">
+        <label for="username">Your name:</label>
+        <input type="text" name="username" id="username">
+        <button type="submit">Submit</button>
+    </form>
+{{/if}}
+<a href="/">Return to home page</a>
